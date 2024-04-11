@@ -9,9 +9,10 @@ def askGPT(model_name, prompt):
         model = model_name, messages = messages_prompt
     )
     gptResponse = response["choices"][0]["message"]["content"]
+    input_tok = response['usage']["prompt_tokens"]
+    output_tok = response['usage']["completion_tokens"]
     total_bill = response['usage']["prompt_tokens"] * 0.0005/1000 + response['usage']["completion_tokens"] * 0.0015/1000
-    return total_bill, gptResponse
-
+    return total_bill, input_tok, output_tok, gptResponse
     
 
 # 3. 메인 함수
@@ -61,9 +62,14 @@ def main():
         - Main character's gender:{sex}
         - Occupation of the main character:{job}
         '''
-        bill, res = askGPT(model_name, prompt)
+        bill, input_tok, output_tok, res = askGPT(model_name, prompt)
         st.info(res)
-        st.info(f"당신의 1 딸깍으로 나간 돈: {bill*1363.80} 원")
+        paycheck = f"""
+                    입력 토큰 수: {input_tok}<br>
+                    출력 토큰 수: {output_tok}<br>
+                    당신의 1 딸깍으로 나간 돈: {bill*1363.80:0.2f} 원
+                    """
+        st.markdown(paycheck, unsafe_allow_html=True)
         
 if __name__=='__main__':
     main()
