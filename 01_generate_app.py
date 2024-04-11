@@ -1,6 +1,10 @@
 # 1. 라이브러리 임포트
 import streamlit as st
+import subprocess
+subprocess.run("pip install openai")
+
 import openai
+
 
 # 2. 기능 구현 함수
 def askGPT(prompt):
