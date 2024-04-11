@@ -1,8 +1,5 @@
 # 1. 라이브러리 임포트
 import streamlit as st
-import subprocess
-subprocess.run("pip install openai")
-
 import openai
 
 
