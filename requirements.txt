@@ -17,6 +17,7 @@ debugpy @ file:///D:/bld/debugpy_1707444544473/work
 decorator @ file:///home/conda/feedstock_root/build_artifacts/decorator_1641555617451/work
 exceptiongroup @ file:///home/conda/feedstock_root/build_artifacts/exceptiongroup_1704921103267/work
 executing @ file:///home/conda/feedstock_root/build_artifacts/executing_1698579936712/work
+faiss-cpu==1.8.0
 frozenlist==1.4.1
 gitdb==4.0.11
 GitPython==3.1.43
@@ -74,6 +75,7 @@ pydantic==2.6.4
 pydantic_core==2.16.3
 pydeck==0.8.1b0
 Pygments @ file:///home/conda/feedstock_root/build_artifacts/pygments_1700607939962/work
+PyPDF2==3.0.1
 PySocks==1.7.1
 python-dateutil @ file:///home/conda/feedstock_root/build_artifacts/python-dateutil_1709299778482/work
 pytz==2024.1
